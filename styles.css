@@ -1,0 +1,764 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(219, 0, 0);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+body {
+    background-color: #000000;
+    font-family: 'Outfit', sans-serif;
+    height: 3100px;
+}
+
+img {
+    user-select: none;
+}
+
+main {
+    position: relative;
+    display: block;
+    height: fit-content;
+    background-size: 150% 150%;
+    background: linear-gradient(45deg, rgba(219, 0, 0) 5%, #000000 60%, #000000 90%);
+    background-size: 150% 150%;
+    background-origin: border-box;
+}
+
+header {
+    position: fixed;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 50px 20px 50px;
+    z-index: 100;
+    transition: 0.5s;
+}
+
+header .header-logo {
+    height: 40px;
+    width: auto;
+    transition: 0.5s;
+    margin-left: 1px;
+    margin-right: 55px;
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.45));
+}
+
+header nav {
+    margin-right: auto;
+    display: flex;
+    gap: 15px;
+}
+
+header nav a {
+    color: rgb(255, 255, 255, 0.8);
+    font-weight: 400;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: rgb(219, 0, 0);
+}
+
+header nav .acilir-menu {
+    display: block;
+    margin: auto;
+    margin-left: 20px;
+    position: relative;
+    width: 140px;
+    transition: 0.5s;
+}
+
+header nav .acilir-menu .acilir-menu-linkler {
+    background-color: rgb(219, 0, 0);
+    padding: 10px 8px;
+    width: 140px;
+    display: none;
+    position: absolute;
+    top: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+}
+
+header nav .acilir-menu .acilir-menu-linkler a {
+    display: block;
+    margin-top: 4px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+header nav .acilir-menu .acilir-menu-linkler a:hover {
+    color: rgb(219, 0, 0);
+    background: rgb(255, 255, 255);
+}
+
+header nav div a.hesabim {
+    background-color: rgb(219, 0, 0);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    padding: 2px 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.8);
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+header nav div a.hesabim i {
+    margin-right: 5px;
+}
+
+header nav div a.hesabim:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(219, 0, 0);
+}
+
+header .arama-icon {
+    font-size: 30px;
+    transition: 0.5s;
+    color: rgb(255, 255, 255, 0.8);
+    cursor: pointer;
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.45));
+    transition: 0.3s;
+}
+
+header .arama-icon:hover {
+    color: rgb(255, 255, 255, 1);
+}
+
+header input {
+    display: none;
+    height: 30px;
+    width: 200px;
+    right: 120px;
+    position: absolute;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Netflix Sans', sans-serif;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0 15px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(255, 255, 255, 0.6);
+    outline: none;
+    transition: 0.3s;
+    animation: slideRightLeft 0.5s ease forwards;
+}
+
+@keyframes slideRightLeft {
+    from {
+        right: 120px;
+    }
+
+    to {
+        right: 13%;
+    }
+}
+
+header input::placeholder {
+    color: rgb(255, 255, 255, 0.4);
+}
+
+header input:focus::placeholder {
+    color: transparent;
+}
+
+.giris .resim-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url("https://m.media-amazon.com/images/M/MV5BMzI5NDI0MWYtNTc1MC00ODBkLTkyNGUtNTcyYjA3MjRjZjE4XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_FMjpg_UX2160_.jpg") no-repeat center center/cover;
+    overflow: hidden;
+}
+
+#playButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 100px;
+    color: rgb(255, 255, 255);
+}
+
+#playButton i {
+    filter: drop-shadow(0 0 20px rgb(219, 0, 0));
+    cursor: pointer;
+}
+
+.giris video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.giris .resim-container .resim-icerik {
+    position: absolute;
+    top: 36%;
+    left: 0;
+    margin-left: 50px;
+    width: fit-content;
+    z-index: 2;
+}
+
+.giris .resim-container .resim-icerik .kapak {
+    width: 450px;
+    height: auto;
+    display: block;
+    /* margin: auto; */
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.99));
+}
+
+.giris .resim-container .resim-icerik p {
+    color: rgb(255, 255, 255, 0.8);
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    letter-spacing: 1.2px;
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.99));
+    width: 600px;
+    margin-bottom: 30px;
+}
+
+.giris-linkler {
+    display: flex;
+    justify-content: space-between;
+}
+
+.giris .resim-container .resim-icerik .izle-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 5px 0;
+    border-radius: 15px;
+    width: 100%;
+    text-decoration: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    margin-right: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.8);
+    transition: 0.3s;
+    border: 2px solid rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+.giris .resim-container .resim-icerik .daha-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 5px 0;
+    border-radius: 15px;
+    width: 100%;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.8);
+    margin-left: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.giris .resim-container .resim-icerik .izle-btn:hover {
+    color: rgb(255, 255, 255);
+    background: none;
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.9);
+}
+
+.giris .resim-container .resim-icerik .daha-btn:hover {
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.9);
+}
+
+.giris .resim-container .resim-icerik .izle-btn i,
+.giris .resim-container .resim-icerik .daha-btn i {
+    margin-right: 5px;
+}
+
+.giris .resim-container .sag {
+    display: flex;
+    position: absolute;
+    bottom: 20%;
+    right: 0;
+    z-index: 2;
+    align-items: center;
+}
+
+.giris .resim-container .sag i {
+    font-size: 40px;
+    opacity: 0.8;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.9));
+    transition: 0.3s;
+}
+
+.giris .resim-container .sag i:hover {
+    opacity: 1;
+}
+
+.giris .resim-container .sag span {
+    background-color: rgb(219, 0, 0, 0.8);
+    color: rgb(255, 255, 255);
+    padding: 8px 75px 8px 15px;
+    font-size: 18px;
+    align-self: center;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    border-radius: 9px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-left: 15px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.8);
+}
+
+.giris .resim-container .golge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+    height: 100%;
+    box-shadow: inset -180px 150px 80px -55px rgba(0, 0, 0, 0.85);
+}
+
+.dizi-icerikler {
+    padding-left: 50px;
+    position: relative;
+    top: -110px;
+    overflow: hidden;
+    z-index: 50;
+}
+
+.dizi-icerikler .slider-container {
+    position: relative;
+}
+
+.dizi-icerikler .slider-icerik h2 {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.dizi-icerikler .dizi-row {
+    display: inline-flex;
+    gap: 10px;
+    transition: transform 0.5s ease;
+}
+
+.dizi-icerikler .dizi-row img {
+    border-radius: 5px;
+    width: 300px;
+    height: auto;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dizi-icerikler .dizi-row img:hover {
+    transform: translate(0, -15px);
+    box-shadow: 0 0 10px rgb(219, 0, 0, 0.6);
+}
+
+.dizi-icerikler .dizi-row.turkey img {
+    width: auto;
+    height: 320px;
+    box-shadow: none;
+}
+
+.dizi-icerikler .dizi-row.turkey img:hover {
+    transform: none;
+}
+
+.dizi-icerikler .slider-container .ileri {
+    transition: 0.3s;
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+}
+
+.dizi-icerikler .slider-container .geri {
+    transition: 0.3s;
+    position: absolute;
+    top: 50%;
+    opacity: 0;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+}
+
+.dizi-icerikler .slider-container:hover .ileri,
+.dizi-icerikler .slider-container:hover .geri {
+    opacity: 1;
+}
+
+.dizi-icerikler .slider-container .ileri:hover,
+.dizi-icerikler .slider-container .geri:hover {
+    filter: drop-shadow(0 0 20px rgb(255, 255, 255));
+}
+
+footer {
+    background: rgb(0, 0, 0);
+    padding: 240px 0 100px 0;
+    position: relative;
+    top: -220px;
+    height: fit-content;
+}
+
+footer img {
+    width: 300px;
+    display: block;
+    margin: auto;
+    transition: 0.3s;
+}
+
+footer img:hover {
+    transform: scale(1.2);
+}
+
+footer .sosyal {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 55px;
+}
+
+footer .sosyal a {
+    color: rgb(255, 255, 255);
+    font-size: 45px;
+    transition: 0.3s;
+}
+
+footer .sosyal a:hover {
+    color: rgb(219, 0, 0);
+}
+
+footer .footer-linkler {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 80px;
+}
+
+footer .footer-link {
+    margin-top: 20px;
+}
+
+footer .footer-link a {
+    color: rgb(255, 255, 255, 0.95);
+    display: block;
+    font-size: 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+footer .footer-link a:hover {
+    color: rgb(219, 0, 0);
+}
+
+footer .tag{
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    display: block;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+footer .tag a{
+    text-decoration: none;
+    transition: 0.3s;
+    color: rgb(219, 0, 0);
+}
+
+footer .tag a:hover{
+    color: rgb(255, 255, 255);
+}
+@media screen and (max-width: 1150px) {
+
+    #playButton {
+        display: none;
+    }
+    
+    header {
+        padding: 50px 30px 20px 30px;
+    }
+
+    header .header-logo {
+        margin-right: 30px;
+    }
+
+    header nav a {
+        font-size: 15px;
+        display: none;
+    }
+
+    header nav .acilir-menu {
+        width: 120px;
+        display: block;
+        margin-left: 20px;
+    }
+
+    header nav .acilir-menu .acilir-menu-linkler {
+        width: 120px;
+    }
+
+    header input {
+        height: 30px;
+        right: 50px;
+        font-size: 16px;
+        animation: slideRightLeft2 0.5s ease forwards;
+    }
+
+    @keyframes slideRightLeft2 {
+        from {
+            right: 50px;
+        }
+
+        to {
+            right: 15%;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .dizi-icerikler .slider-container .ileri {
+        opacity: 0.8;
+    }
+
+    .dizi-icerikler .slider-container .geri {
+        opacity: 0.8;
+    }
+
+    header {
+        justify-content: space-between;
+    }
+
+    header nav .acilir-menu {
+        width: 150px;
+    }
+
+    header nav .acilir-menu .acilir-menu-linkler {
+        width: 150px;
+        font-size: 14px;
+    }
+
+    header nav .acilir-menu .acilir-menu-linkler a {
+        font-size: 16px;
+    }
+
+    header nav div a.hesabim {
+        font-size: 18px;
+    }
+
+    header .arama-icon {
+        font-size: 25px;
+    }
+
+    .giris .resim-container .resim-icerik {
+        top: 36%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-left: 0px;
+    }
+
+    .giris .resim-container .resim-icerik .kapak {
+        width: 350px;
+        margin: auto;
+        margin-bottom: 25px;
+    }
+
+    .giris .resim-container .resim-icerik p {
+        font-size: 16px;
+        margin-bottom: 30px;
+        text-align: left;
+        width: 400px;
+    }
+
+    .giris .resim-container .resim-icerik .izle-btn {
+        font-size: 18px;
+    }
+
+    .giris .resim-container .resim-icerik .daha-btn {
+        font-size: 18px;
+    }
+
+    .giris .resim-container .sag {
+        bottom: 15%;
+    }
+
+    .giris .resim-container .sag i {
+        font-size: 30px;
+    }
+
+    .giris .resim-container .sag span {
+        font-size: 16px;
+    }
+
+    .dizi-icerikler {
+        padding-left: 30px;
+    }
+
+    .dizi-icerikler .slider-icerik h2 {
+        font-size: 20px;
+    }
+
+    .dizi-icerikler .dizi-row img {
+        width: 200px;
+    }
+
+    .dizi-icerikler .dizi-row.turkey img {
+        height: 320px;
+    }
+
+    footer img {
+        width: 250px;
+    }
+
+    footer .sosyal {
+        gap: 35px;
+    }
+
+    footer .sosyal a {
+        font-size: 35px;
+    }
+
+
+    footer .footer-linkler {
+        flex-wrap: wrap;
+    }
+
+    footer .footer-link a {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        height: 200px;
+    }
+
+    header {
+        justify-content: space-between;
+    }
+
+    header .header-logo {
+        margin-right: 15px;
+    }
+
+    header nav {
+        display: flex;
+        justify-content: end;
+        margin: 0;
+    }
+
+    header nav .acilir-menu {
+        width: max-content;
+        display: flex;
+        margin: none;
+    }
+
+    header nav .acilir-menu .acilir-menu-linkler {
+        width: max-content;
+    }
+
+    header .arama-icon {
+        display: none;
+    }
+
+    .giris .resim-container .resim-icerik {
+        top: 35%;
+        left: 0;
+        transform: none;
+        margin-left: 20px;
+    }
+
+    .giris .resim-container .resim-icerik .kapak {
+        width: 300px;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+
+    .giris .resim-container .resim-icerik p {
+        width: 350px;
+    }
+
+    .dizi-icerikler {
+        padding-left: 20px;
+    }
+
+    .dizi-icerikler .slider-icerik h2 {
+        font-size: 16px;
+    }
+
+    .dizi-icerikler .dizi-row img {
+        width: 180px;
+    }
+
+    .dizi-icerikler .dizi-row.turkey img {
+        height: 250px;
+    }
+
+    footer .footer-linkler {
+        flex-wrap: wrap;
+    }
+
+    footer .footer-link {
+        margin: 20px;
+    }
+}
+
+@media screen and (max-height: 680px) {
+    .giris .resim-container .resim-icerik {
+        top: 25%;
+        left: 0;
+        transform: none;
+        margin-left: 20px;
+    }
+}
