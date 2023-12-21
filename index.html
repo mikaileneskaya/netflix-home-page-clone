@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Örnek Proje</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <img class="header-logo"
+                src="https://images.ctfassets.net/y2ske730sjqp/821Wg4N9hJD8vs5FBcCGg/9eaf66123397cc61be14e40174123c40/Vector__3_.svg?w=460"
+                alt="">
+            <nav>
+                <a href="">Anasayfa</a>
+                <a href="">Diziler</a>
+                <a href="">Filmler</a>
+                <a href="">Yeni ve Popüler</a>
+                <a href="">Listem</a>
+                <div class="acilir-menu">
+                    <a class="hesabim"><i class="fa-solid fa-user"></i>Hesabım</a>
+                    <div class="acilir-menu-linkler">
+                        <a href="">Profil Yönetimi</a>
+                        <a href="">Hesap Ayarları</a>
+                        <a href="">Yardım Merkezi</a>
+                        <a href="">Çıkış Yap</a>
+                    </div>
+                </div>
+            </nav>
+
+            <input type="text" placeholder="Netflix'de ara!">
+            <i class="fa-solid fa-magnifying-glass arama-icon"></i>
+        </header>
+
+        <section class="giris">
+            <div class="resim-container">
+                <video id="bg-video" loop>
+                    <source
+                        src="https://imdb-video.media-imdb.com/vi840285977/1434659607842-pgv4ql-1576190751450.mp4?Expires=1703240348&Signature=Lnqyrs8udoGYP62oVGAdD0el~1wKPIRg~Qk0OR7yAvErWb2cQIYGOcCeAJEirr02H~BxUb451WjF76kZg1kh-WIB1AnkeX6FtyHSHfbRdpLxHFBR23OI95Md-u9nA~4~5m19pm6cMkP0Tf1KF~g92S8Z2Yrc4Oya3pq2S68544Fuj-BtnWugp8ZIOs9Lxk~eZZbCvFegMGYXS2HwtWpULOv9e77ygytmCEXJFTG~HukBPMW2LWZ5hzCBEtYIH01JZayoeaTsHoF~xIoTuRMpZUhp2VTRVTUSStAt~RLUxsWz~gyG07tS4qgPxcPe7RR9e-PEyK4MAU~lJradnMD~Ng__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA"
+                        type="video/mp4">
+                </video>
+
+                <button id="playButton"><i class="fa-regular fa-circle-play"></i></button>
+                <div class="resim-icerik">
+                    <img class="kapak"
+                        src="https://occ-0-778-2774.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABV_CNPmP8I0Rt_6YtQ4Mnf04hPy3ZoCvk6utaeo-_nYyIS8egbxPSvLMGkb9tR9h_jNgsT0ddOQV7_wpZe0TZ3X-f8NMjjj0JpV8R_LU5_5WwT62teYGmM_cHj5zkYfT3Q8HKVDA9FfH6bBgcS_F4iVqCH2f9pp36L7eXEO3CNdlPtuG6iiQ.webp?r=21d"
+                        alt="" />
+                    <p>Canavarlarla dolu bir dünyada Gezgin Geralt'ın, kaderiyle örülü bir hikayede prenses Ciri ve
+                        güçlü büyücü Yennefer ile yollarının kesiştiği 'The Witcher', büyü, ihanet ve epik mücadelelerle
+                        dolu bir serüven sunuyor.</p>
+                    <div class="giris-linkler">
+                        <a class="izle-btn"><i class="fa-solid fa-play"></i>Oynat</a>
+                        <a href="https://www.netflix.com/title/80189685" class="daha-btn" onclick="dahafazlabilgi()"><i
+                                class="fa-solid fa-circle-info"></i>Daha Fazla
+                            Bilgi</a>
+                    </div>
+                </div>
+                <div class="sag">
+                    <i class="fa-solid fa-volume-xmark"></i>
+                    <span>18+</span>
+                </div>
+                <div class="golge"></div>
+            </div>
+        </section>
+
+        <section class="dizi-icerikler">
+            <div class="slider-icerik">
+                <h2>Gündemdekiler</h2>
+                <div class="slider-container">
+                    <div class="dizi-row">
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABVVZ-ah986Y2bhyjbLN6tHdUsoXBZe_iiXYeE5bLFyaXp5kNROYzZ1Yw5xM_C1wBwc4rGgTaD9EpyWpxG-j_vhSq9Cg6069tjDnT.webp?r=546"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABXloKL-_FAR-GVR64-d98cdbGctN2sm4BCyZcTDf5QTqqYDFtvtjKFJX07Lk8211RIt6ZdYrDefb5cp3--YaXiADOTXTG-8aAxYm.webp?r=872"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABYqgg276jGOJ_z2eCPUkykSXZ6N_QpPEi6ve3uj_6icCsKR2q-yGfdvyH9o51dgjoxLyddASepuqOeJb9LwrQ0rXSNnmf5-gTwS4JULWdjM1osMLrn4HQ9AZP5jhwkQUe7xdUQ.jpg?r=4c4"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABW2EqtElIPOSrLe9WxLNeNw6F3024tX4M-PFEeFCfFQfq-CNshvoQRoJIQnWGq1QDU5n2ysd_h9UbTbO-ufGxVaP4FlbS8x5hhwS.webp?r=252"
+                            alt="" />
+                        <img src="https://occ-0-778-2774.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABf21VCI9IHVp-piLVZebcqpOjc8mLMufU1A6SMlYw55FHhNGsC1bdttBaF_G8wEDYMb7pFKQM0jDledGeCMNAubiwHi4DbAjFBvHeA81EE2S4HkSkhBA4zx7N5WntPZ5znqPpg.jpg?r=f9b"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABdsDvOibMeR9MWBu69M06DrO52BpvIWb7bSwMoq4K11DOrQxu2rHGfR9-rpqNSIeinwQjHIy0T4INHVx6M-de83AyF3LAxkgMVdpqJgVT0edizzNJStCrgcQ-AiLZ3FnJScsEiGQp5yRbHBmKraeRer6XFfSohILDDUR_UP-a8AnTHE2kNzFFneQdiPEyLqRjzIoKvoum5YaAgEPwyk5S6MUoMkdPC9HkmuxYRPJWkjvY2aJifQ5xtCfKXjoJFUPoQFGRt2aoF_kxVuP61qLMqa5UL-MLVeU8UaaGp-cEfKyTpRKFh3c.jpg?r=0b4"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABVeoT8y_Av96_dDPNkh3XgKDSX_RGhuNpeCqdxOusi8F43gIt8M8qlj3pBqQIdXNVWmREjN3iA3lnGgMeRZx2GjzYolkPpQ62gwYNl3PS96vTU7PPBpRFVhU246qxz0THaHQyw.jpg?r=807"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABQv8FOmHVR-MY2pKdCwB3aeL080Duhz2UzOc4URdEVH-2qiFjLucj6vmeta79fllq8vwd8I8kOLNMMfIQgvRtp5qUwGTA0KK65ZmRyr03uz7Wr9oOF9J9HL9YCXp1tRZcOvQ0w.jpg?r=9f9"
+                            alt="" />
+                    </div>
+                    <svg class="ileri" xmlns="http://www.w3.org/2000/svg" height="16" width="10"
+                        viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                        <path fill="#ffffff"
+                            d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                    </svg>
+                    <svg class="geri" xmlns="http://www.w3.org/2000/svg" height="16" width="10" viewBox="0 0 320 512">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                        <path fill="#ffffff"
+                            d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="slider-icerik">
+                <h2>Sizin İçin En İyi Seçimler</h2>
+                <div class="slider-container">
+                    <div class="dizi-row">
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABYLf8buoWQeRJ_g4l41STr8wHAFJX2Ilde2CwZa4OOJ8UH_TMSxK5ykwyIx4gmm-AFTbUqF97i_PZCiVtHJv1FsQO5khWkaUvmJ13TCBSPl9NWUivXJmhJGGZmCvB6I1ePXc4Q.jpg?r=f09"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABfjXfy-zQYTg1Q1Wv9GIyTZ4B1jfpf2Zp3f-jbvPFE7WTAcqCYzjUvDKEsRtS2nx6EJzGSNbLdj834BCMOGorslAyxd5N_zRBCoVJtB0u0yrJg6nksIhrg__8EqLYalsb8d1ug.jpg?r=316"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABZWqonIJsqzWOMmeIwzBkEpczG_gRCJcl47DNdhSNbwSIxOWg_duopy3y4sSMbNls93vfRXcgPsTGNOQAfWoiDwVJh8xbgMPUzSbi83gOXhjytkCvQajAOxQF3bhrh-oNUd59g.jpg?r=30e"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABWP4EROgkelppQPnORrD_6dZwVfc6bf6VONNGCHX9g0gA3n-3VezFCWIXfiS3cQkpenw8hBIaeIekMANZBWQQ5luV76G1939D4DdzweraVocibim4mn-rHKg32EkLZaU11wfcA.jpg?r=79f"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABVeoT8y_Av96_dDPNkh3XgKDSX_RGhuNpeCqdxOusi8F43gIt8M8qlj3pBqQIdXNVWmREjN3iA3lnGgMeRZx2GjzYolkPpQ62gwYNl3PS96vTU7PPBpRFVhU246qxz0THaHQyw.jpg?r=807"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABU56RL9hgGHBTjBZlw1zMxjm8o1FDCEbUvu7gjNjTy51eJdpYdr37V1kaPINb3ZraR27DmpHrNMGCw40lmwx71jeF-lVOx0r_Ia30X-GwP7UHu3JnXsTl_dDUdp51_9XiVA7lw.jpg?r=442"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABQv8FOmHVR-MY2pKdCwB3aeL080Duhz2UzOc4URdEVH-2qiFjLucj6vmeta79fllq8vwd8I8kOLNMMfIQgvRtp5qUwGTA0KK65ZmRyr03uz7Wr9oOF9J9HL9YCXp1tRZcOvQ0w.jpg?r=9f9"
+                            alt="" />
+                        <img src="https://occ-0-778-2774.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABf21VCI9IHVp-piLVZebcqpOjc8mLMufU1A6SMlYw55FHhNGsC1bdttBaF_G8wEDYMb7pFKQM0jDledGeCMNAubiwHi4DbAjFBvHeA81EE2S4HkSkhBA4zx7N5WntPZ5znqPpg.jpg?r=f9b"
+                            alt="" />
+                    </div>
+                    <svg class="ileri" xmlns="http://www.w3.org/2000/svg" height="16" width="10"
+                        viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                        <path fill="#ffffff"
+                            d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                    </svg>
+                    <svg class="geri" xmlns="http://www.w3.org/2000/svg" height="16" width="10" viewBox="0 0 320 512">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                        <path fill="#ffffff"
+                            d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="slider-icerik">
+                <h2>Aksiyon Önerilerimiz</h2>
+                <div class="slider-container">
+                    <div class="dizi-row">
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABeP79sm2B70TPqt8kaRlXPEe7VULvVENh3bgQU4sEirWGMsv1Hpo4mm62WToiYoM1a0LH4LqZyxbb4kh4bPj7g8wmMEvU-aW08C4Qs15IFFofOOP07nqxVasiAxtN9Y6m3lykg.jpg?r=f12"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABUXgVuZ50hbvUyly65hzyTL4QiaE2oeR4vHW64wr-WEj1ED1GCrwJ2p6FxpHUDckhHL3CfMVLUdGHP1JMHoIDuIBFKZi1IsKyb8S_2qjwY4xvl_ytFKBV2GSaBp96q5PqSGzLA.jpg?r=079"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABdsDvOibMeR9MWBu69M06DrO52BpvIWb7bSwMoq4K11DOrQxu2rHGfR9-rpqNSIeinwQjHIy0T4INHVx6M-de83AyF3LAxkgMVdpqJgVT0edizzNJStCrgcQ-AiLZ3FnJScsEiGQp5yRbHBmKraeRer6XFfSohILDDUR_UP-a8AnTHE2kNzFFneQdiPEyLqRjzIoKvoum5YaAgEPwyk5S6MUoMkdPC9HkmuxYRPJWkjvY2aJifQ5xtCfKXjoJFUPoQFGRt2aoF_kxVuP61qLMqa5UL-MLVeU8UaaGp-cEfKyTpRKFh3c.jpg?r=0b4"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABYVu5NciwywSfkAZ9tsx1UpCQoRVEGKsR9lwoRhv7XoyAjTw6XDUGrZvpsJ1HXnlmNA3B0G2c_2c2t8gG24s48tYuNUnL1aZghg46dW1csoTjaIe6cuzXnjIinQJXJocnx6ZXQ.jpg?r=2d4"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABSn2gqIOpJI8BHxVPr1no6cxoga2PpA5sMX_anro7EykkRqMHuvUigp5bmhxeeW7CRwluYy5uyA3EL3isKNZAKAQHIrqEQObaw17.webp?r=fca"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABYw2GuuZHkZIkz9zfY7wYiU07l7YbXGcelqv5Kl4XtanVOiXlYEN84vnOmWhaMcZOb6geG38eLiKEVsmEVsfOLGNOUMjuI-Gh3enU8lxVvefk4thgQFyUfWhjJqwkq3Sf-f2xg.jpg?r=ae5"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABRQOVxixz7EHrYxmt8X6cLRBaIPUvGBjHz8yPUsAvs2iPomKYbaLqZi4MT4saUq3Nv-DwSrw54WV5ythxnYZdIl8BofPnV9EkRT2tbA5xKus0wBcos5EkE_dNe62gGeFp69ong.jpg?r=1ba"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABXloKL-_FAR-GVR64-d98cdbGctN2sm4BCyZcTDf5QTqqYDFtvtjKFJX07Lk8211RIt6ZdYrDefb5cp3--YaXiADOTXTG-8aAxYm.webp?r=872"
+                            alt="" />
+                    </div>
+                    <svg class="ileri" xmlns="http://www.w3.org/2000/svg" height="16" width="10"
+                        viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                        <path fill="#ffffff"
+                            d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                    </svg>
+                    <svg class="geri" xmlns="http://www.w3.org/2000/svg" height="16" width="10" viewBox="0 0 320 512">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                        <path fill="#ffffff"
+                            d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="slider-icerik">
+                <h2>Türkiye'de Şuan En Popüler</h2>
+                <div class="slider-container">
+                    <div class="dizi-row turkey">
+                        <img src="https://occ-0-778-2774.1.nflxso.net/dnm/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABUZ-uSl7vMNqI452vubF7mrW2fWiJaoXZyUp8nNxEOC3FJSOnHps_erJ64WRqAmGi0rIGclQ52IjGG45IQpJUMjN_kmjmMpTG-6-ACOrTquSgyLrDAt0RDuvT6h3fmKRxmDMcbcFmvZzM2ZVTlRnFOxQLIHo1Is63d_81m57pJeDBnwkVi1usDLRnZEKh_DfG9d0Ievk5I-AMZMhcqL_mHZ5SWt1HFoiNHq1LMxRzf2QRVIpTmv0xeF_OiIwyebi_wmOyJ_RKrwmxEjya_-gLlBVBCMGfJxG_WkO3Xq9ml92wtKHBtvFf2s.jpg?r=942"
+                            alt="" />
+                        <img src="https://occ-0-778-2774.1.nflxso.net/dnm/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABX7zN0Qve6w1t3JyOgVFsX9-QwMRK9l-UG4rGb2x8cG-9utdM_ILAQHF1P_dbC_7NxO25ouaaZeYV8EMgEyW6IdwI02o2xkTXrcR.webp?r=fad"
+                            alt="" />
+                        <img src="https://occ-0-778-2774.1.nflxso.net/dnm/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABVTdKRf6AamlxEbhIYXnhk_0DpY7sN7NDDTinL19ShlYhuGd1iLLqFJXd_YGthRacx7hrvFkLxCJ1tyaKtklEujkay2xCcuCgrocycC1KcyjhHDpBDhQH_RzyO2zQsbx0BI_6TObbPRLjNaXzSMgnbnjDfT2IhheVdtaDQJFltbsE_l9pivPv-lVW1x_EAIKswKK_olOlmz-Zzf1ddh4uIlpxXjxiMVdrIBGfffQD_VCb_gfRUljWuIzz4ry1nd0W5t8Od8W0zPcex8yEESpmTe3yLEtWynmZVLOrmRFrXj6EI8CtnSUgZ3lDM0.jpg?r=a9c"
+                            alt="" />
+                        <img src="https://occ-0-778-2774.1.nflxso.net/dnm/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABYFlEaifOB5NfaBaZXuKd7zo113v-QU2Yt0Mkrr6zY8qibO8KLjg_cmF_UqY_1GOQj5YZJ1Tvxv6Kp76aO_FtqCiq7MbIwu5Dd36JeI3KfWUYmv6MLui25Vt18XD-ddbBUVmjfOsdpbjLxXZ6K2bF8I1fDbYclmKC_OU6Qrhyy83NY4Vt2-_ro3tEgbiKmtvJ_9QYAclPFXC4f0yqPMg6evf5TmsC2hrMxnExUIvB5Nlh6gNPOo9zXXziQEqAfmBhwX5EwYK-7shFE6SdHXa8oMULPU.webp?r=489"
+                            alt="" />
+                        <img src="https://occ-0-778-2774.1.nflxso.net/dnm/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABdngxQZrkQyjAleypn1_VrcjZX8_CLKfBE5quy_s1azJSh2KxX8o6rICkvmbP9KFgUd8rWA70uudDOjfZZPppHpMsiQWd4MI7kWX-Ndxze4YJuywiZ0ilkrZL2UWXXK0RDN6FHd0w8KfvaBaE-LB93oOW-TZj4PLTuZcHcaV0_smoQ6WCWvX2YXx-q3u7QubbO6a82EA7oO0czF5N7zBVS7PFckfg43tgpNcHgK0DIZPkYOQd2BFKKFBuVK18UGFkaYMer3QCYknf99HlkfRsFCM3bM.webp?r=0f1"
+                            alt="" />
+                        <img src="https://occ-0-778-2774.1.nflxso.net/dnm/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABTh42w8uma1pUQ1LcMKVAODZrasOKiiV7bbvTDY7K4LgYLlJXPBJzcNri5Y8ifW9gX2K32Le9NfJsVXPjcrnlKuJeYY43vq7OIhzmg3J-_U9dXNc2ER1LWnhyyTJzDbETv3c-uR4aXm8G70M9XFHOUhFpptf831Sy_DjopKe5TmRMgKeEDhL4-SUQOAkNIqamUfWIY9IBLtu5VJKVJYnFa1Wz4_h-HSMrqW54M2LBxkusl7y70mNax5MbsdEQfRz_UnD04jJUdMwKOnVTiBVUgsq529JC-J3254AyaKREo-eEV9cwGJKHQw.jpg?r=809"
+                            alt="" />
+                        <img src="https://occ-0-778-2774.1.nflxso.net/dnm/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABWmw6AZvJ4w40urZ3vAUUPQjkLEB-ABjeAYewM3mnpDNIooF0Ns8-BBZGYDOzIkGLRN3TcV3E0Anjy8WjUibzPSWTmwvTjKWqxHKNKEO2uekRHWIi60ORu_ufcPPfe0vXo3l4L0KJLtur0ugUgJxnLRYML-7aS_Oq0rSx1sTFqun8g31Gvq4_HiUUjbYPXldkcG2eUK3iuyZhA_bEPz4Q8cQc36DEFPEjXR3Yituj5Wf1CvL7af0OlktuIRHpqqnDKfQlkTfMaJLPkQfD--DZu4DJZg.webp?r=363"
+                            alt="" />
+                        <img src="https://occ-0-778-2774.1.nflxso.net/dnm/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABY6qmgc1C6-ij6hMly7kYxF-8VDo2nDfpUNf5cB0Db-0nx-QWYd6sLz5_0oNZT9THjUBnVDsd6uqyjD4ZLrsDRpWl1rUe1oCK5Sn4NzbqsAHae72jXHCUzyBbYOK9udsQeg-3fhUpMPGkmLs4ljtKk40Ey7lGjg_p1Uf63pukmwYUYyVXWKUDK2yj9iNpmNw2sITrZONx1qKU59F4NdU8HQoSSrEqX2GynHqeGaVGWnokGlCZkP40SNe-yKwOkFFvFfOLGpbvtcxhQLBXDpoybru1ota5fQ3T9GxxhajANIstJq0A9TLSVs.jpg?r=e6f"
+                            alt="" />
+                        <img src="https://occ-0-778-2774.1.nflxso.net/dnm/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABQc-YWataV4GqoTGgD49izBvzLOxR_buqDH0T3TepDPX_VjUoeBxfEoHTND2c1A_TuI18d8cCULhr9HB5qKZs8Zaqwg9xIys5WOg9uDE9TE5n7xZQlxB3JSiIZefLQ3--bKyulMA7Q5zw3tYIUW9RVnoJOgSuCys4FCTImainWizCS2iO-AMKvdUzr74joNV9wggaZ0KtOgqWvgQDsaYCPJi2tAcE7skO8H8IdkXeeKzBODLnjbGhsIfmu0NeJ2Xh4_MA7l66cKQMEhouXZhHeOZayM.webp?r=d91"
+                            alt="" />
+                    </div>
+                    <svg class="ileri" xmlns="http://www.w3.org/2000/svg" height="16" width="10"
+                        viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                        <path fill="#ffffff"
+                            d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                    </svg>
+                    <svg class="geri" xmlns="http://www.w3.org/2000/svg" height="16" width="10" viewBox="0 0 320 512">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                        <path fill="#ffffff"
+                            d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="slider-icerik">
+                <h2>Sürükleyici Doğaüstü Bilim Kurgu ve Fantastik Diziler</h2>
+                <div class="slider-container">
+                    <div class="dizi-row">
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABU56RL9hgGHBTjBZlw1zMxjm8o1FDCEbUvu7gjNjTy51eJdpYdr37V1kaPINb3ZraR27DmpHrNMGCw40lmwx71jeF-lVOx0r_Ia30X-GwP7UHu3JnXsTl_dDUdp51_9XiVA7lw.jpg?r=442"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABVeoT8y_Av96_dDPNkh3XgKDSX_RGhuNpeCqdxOusi8F43gIt8M8qlj3pBqQIdXNVWmREjN3iA3lnGgMeRZx2GjzYolkPpQ62gwYNl3PS96vTU7PPBpRFVhU246qxz0THaHQyw.jpg?r=807"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABQv8FOmHVR-MY2pKdCwB3aeL080Duhz2UzOc4URdEVH-2qiFjLucj6vmeta79fllq8vwd8I8kOLNMMfIQgvRtp5qUwGTA0KK65ZmRyr03uz7Wr9oOF9J9HL9YCXp1tRZcOvQ0w.jpg?r=9f9"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABbR3Vjji6uOzEw6D_hbycQ7d7Ebxb_tglc38ngbd_DtMtBuwsCXCkneYPUYHJmwKUPmCBm5tr5iZZFIzbqKYhUUau5Di-wf1K4uRMEIxPq3qDSMKwboEOVQDt-cE9wETL6S0dQ.jpg?r=802"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABYLf8buoWQeRJ_g4l41STr8wHAFJX2Ilde2CwZa4OOJ8UH_TMSxK5ykwyIx4gmm-AFTbUqF97i_PZCiVtHJv1FsQO5khWkaUvmJ13TCBSPl9NWUivXJmhJGGZmCvB6I1ePXc4Q.jpg?r=f09"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABfjXfy-zQYTg1Q1Wv9GIyTZ4B1jfpf2Zp3f-jbvPFE7WTAcqCYzjUvDKEsRtS2nx6EJzGSNbLdj834BCMOGorslAyxd5N_zRBCoVJtB0u0yrJg6nksIhrg__8EqLYalsb8d1ug.jpg?r=316"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABZWqonIJsqzWOMmeIwzBkEpczG_gRCJcl47DNdhSNbwSIxOWg_duopy3y4sSMbNls93vfRXcgPsTGNOQAfWoiDwVJh8xbgMPUzSbi83gOXhjytkCvQajAOxQF3bhrh-oNUd59g.jpg?r=30e"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABWP4EROgkelppQPnORrD_6dZwVfc6bf6VONNGCHX9g0gA3n-3VezFCWIXfiS3cQkpenw8hBIaeIekMANZBWQQ5luV76G1939D4DdzweraVocibim4mn-rHKg32EkLZaU11wfcA.jpg?r=79f"
+                            alt="" />
+                    </div>
+                    <svg class="ileri" xmlns="http://www.w3.org/2000/svg" height="16" width="10"
+                        viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                        <path fill="#ffffff"
+                            d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                    </svg>
+                    <svg class="geri" xmlns="http://www.w3.org/2000/svg" height="16" width="10" viewBox="0 0 320 512">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                        <path fill="#ffffff"
+                            d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="slider-icerik">
+                <h2>Gerilim Dolu Anlar</h2>
+                <div class="slider-container">
+                    <div class="dizi-row">
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABfpUx-m66SMDu6WyzKIV8bAVhIcLQ09PDMYpCQmEqj2KStJsJ3_gaPK24BDD6HfYFUliZ8XnZFM_ousJVDrI0OFU35hv1g7a2JuU-Aa6DlTi7OEE1kwallDMRDiSmMGT81_O-g.jpg?r=4f8"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABSn2gqIOpJI8BHxVPr1no6cxoga2PpA5sMX_anro7EykkRqMHuvUigp5bmhxeeW7CRwluYy5uyA3EL3isKNZAKAQHIrqEQObaw17.webp?r=fca"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABYw2GuuZHkZIkz9zfY7wYiU07l7YbXGcelqv5Kl4XtanVOiXlYEN84vnOmWhaMcZOb6geG38eLiKEVsmEVsfOLGNOUMjuI-Gh3enU8lxVvefk4thgQFyUfWhjJqwkq3Sf-f2xg.jpg?r=ae5"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABRQOVxixz7EHrYxmt8X6cLRBaIPUvGBjHz8yPUsAvs2iPomKYbaLqZi4MT4saUq3Nv-DwSrw54WV5ythxnYZdIl8BofPnV9EkRT2tbA5xKus0wBcos5EkE_dNe62gGeFp69ong.jpg?r=1ba"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABUXgVuZ50hbvUyly65hzyTL4QiaE2oeR4vHW64wr-WEj1ED1GCrwJ2p6FxpHUDckhHL3CfMVLUdGHP1JMHoIDuIBFKZi1IsKyb8S_2qjwY4xvl_ytFKBV2GSaBp96q5PqSGzLA.jpg?r=079"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABeP79sm2B70TPqt8kaRlXPEe7VULvVENh3bgQU4sEirWGMsv1Hpo4mm62WToiYoM1a0LH4LqZyxbb4kh4bPj7g8wmMEvU-aW08C4Qs15IFFofOOP07nqxVasiAxtN9Y6m3lykg.jpg?r=f12"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABdsDvOibMeR9MWBu69M06DrO52BpvIWb7bSwMoq4K11DOrQxu2rHGfR9-rpqNSIeinwQjHIy0T4INHVx6M-de83AyF3LAxkgMVdpqJgVT0edizzNJStCrgcQ-AiLZ3FnJScsEiGQp5yRbHBmKraeRer6XFfSohILDDUR_UP-a8AnTHE2kNzFFneQdiPEyLqRjzIoKvoum5YaAgEPwyk5S6MUoMkdPC9HkmuxYRPJWkjvY2aJifQ5xtCfKXjoJFUPoQFGRt2aoF_kxVuP61qLMqa5UL-MLVeU8UaaGp-cEfKyTpRKFh3c.jpg?r=0b4"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABYVu5NciwywSfkAZ9tsx1UpCQoRVEGKsR9lwoRhv7XoyAjTw6XDUGrZvpsJ1HXnlmNA3B0G2c_2c2t8gG24s48tYuNUnL1aZghg46dW1csoTjaIe6cuzXnjIinQJXJocnx6ZXQ.jpg?r=2d4"
+                            alt="" />
+                    </div>
+                    <svg class="ileri" xmlns="http://www.w3.org/2000/svg" height="16" width="10"
+                        viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                        <path fill="#ffffff"
+                            d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                    </svg>
+                    <svg class="geri" xmlns="http://www.w3.org/2000/svg" height="16" width="10" viewBox="0 0 320 512">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                        <path fill="#ffffff"
+                            d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="slider-icerik">
+                <h2>Netflix'den Öneriler</h2>
+                <div class="slider-container">
+                    <div class="dizi-row">
+                        <img src="https://occ-0-778-2774.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABf21VCI9IHVp-piLVZebcqpOjc8mLMufU1A6SMlYw55FHhNGsC1bdttBaF_G8wEDYMb7pFKQM0jDledGeCMNAubiwHi4DbAjFBvHeA81EE2S4HkSkhBA4zx7N5WntPZ5znqPpg.jpg?r=f9b"
+                            alt="" />
+                        <img src="https://occ-0-778-2774.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABZGv7j8Sxpy-2tOXOMkq-o2zAWGd7N2u30RO_p9EDa6hG58mtDyZI7tcJeul63BiBf-CtY3CmgRmgft5hFT0qsTaIcNRGP9KpWYF9RKShbenrP0rtRz58VK73PCw0w5aso4ZbA.jpg?r=cee"
+                            alt="" />
+                        <img src="https://occ-0-778-2774.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABZBhuiEFdbMKcxfd6ioW98omdTIhon4ZESDyKF2TMTWZqs4Bx0HNWiHlXP4BNhfFCfzExADPsPs33aRTY-UFJ1AxiZqIbaia_QOTlw1rqpd5IEAtL7ZP8qRebyIRjewKA8bP5w.jpg?r=ff7"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABVVZ-ah986Y2bhyjbLN6tHdUsoXBZe_iiXYeE5bLFyaXp5kNROYzZ1Yw5xM_C1wBwc4rGgTaD9EpyWpxG-j_vhSq9Cg6069tjDnT.webp?r=546"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABYqgg276jGOJ_z2eCPUkykSXZ6N_QpPEi6ve3uj_6icCsKR2q-yGfdvyH9o51dgjoxLyddASepuqOeJb9LwrQ0rXSNnmf5-gTwS4JULWdjM1osMLrn4HQ9AZP5jhwkQUe7xdUQ.jpg?r=4c4"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABSn2gqIOpJI8BHxVPr1no6cxoga2PpA5sMX_anro7EykkRqMHuvUigp5bmhxeeW7CRwluYy5uyA3EL3isKNZAKAQHIrqEQObaw17.webp?r=fca"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABfpUx-m66SMDu6WyzKIV8bAVhIcLQ09PDMYpCQmEqj2KStJsJ3_gaPK24BDD6HfYFUliZ8XnZFM_ousJVDrI0OFU35hv1g7a2JuU-Aa6DlTi7OEE1kwallDMRDiSmMGT81_O-g.jpg?r=4f8"
+                            alt="" />
+                        <img src="https://occ-0-3467-778.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABYw2GuuZHkZIkz9zfY7wYiU07l7YbXGcelqv5Kl4XtanVOiXlYEN84vnOmWhaMcZOb6geG38eLiKEVsmEVsfOLGNOUMjuI-Gh3enU8lxVvefk4thgQFyUfWhjJqwkq3Sf-f2xg.jpg?r=ae5"
+                            alt="" />
+                    </div>
+                    <svg class="ileri" xmlns="http://www.w3.org/2000/svg" height="16" width="10"
+                        viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                        <path fill="#ffffff"
+                            d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                    </svg>
+                    <svg class="geri" xmlns="http://www.w3.org/2000/svg" height="16" width="10" viewBox="0 0 320 512">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                        <path fill="#ffffff"
+                            d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="https://images.ctfassets.net/y2ske730sjqp/821Wg4N9hJD8vs5FBcCGg/9eaf66123397cc61be14e40174123c40/Vector__3_.svg?w=460"
+            alt="" />
+        <div class="sosyal">
+            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>
+
+        <div class="footer-linkler">
+            <div class="footer-link">
+                <a href="">Sesli Betimleme</a>
+                <a href="">Yatırımcı ilişkileri</a>
+                <a href="">Yasal Hükümler</a>
+            </div>
+            <div class="footer-link">
+                <a href="">Yardım Merkezi</a>
+                <a href="">İş İmkanları</a>
+                <a href="">Çerez Tercihleri</a>
+            </div>
+            <div class="footer-link">
+                <a href="">Hediye Kartları</a>
+                <a href="">Kullanım Koşulları</a>
+                <a href="">Kurumsal Bilgiler</a>
+            </div>
+            <div class="footer-link">
+                <a href="">Hediye Merkezi</a>
+                <a href="">Gizlilik</a>
+                <a href="">Bize Ulaşın</a>
+            </div>
+        </div>
+
+        <div class="tag">
+            <p>Design and developed by <a href="https://www.mikaileneskaya.com">Mikail Enes Kaya</a></p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
